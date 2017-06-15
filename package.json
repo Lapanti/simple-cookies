@@ -1,0 +1,42 @@
+{
+  "name": "simple-cookies",
+  "version": "0.0.1",
+  "description": "A very simple JS (or TS) library to handle cookies in the browser",
+  "main": "index.js",
+  "repository": "https://github.com/Lapanti/simple-cookies",
+  "author": "Lapanti <laurilavanti@gmail.com>",
+  "license": "MIT",
+  "jest": {
+    "transform": {
+      ".ts": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "mapCoverage": true,
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ]
+  },
+  "lint-staged": {
+    "*.ts": ["prettier --single-quote --print-width 120 --tab-width 4 --trailing-comma all --write", "git add"]
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "prepush": "yarn test",
+    "lint": "tslint --type-check --project tsconfig.json",
+    "test": "yarn lint && jest",
+    "test:watch": "jest --watch",
+    "test:ci": "yarn lint && jest --runInBand --forceExit --coverage"
+  },
+  "devDependencies": {
+    "@types/jest": "^19.2.4",
+    "husky": "^0.13.4",
+    "jest": "^20.0.4",
+    "lint-staged": "^3.6.1",
+    "prettier": "^1.4.4",
+    "ts-jest": "^20.0.6",
+    "tslint": "^5.4.3",
+    "tslint-config-prettier": "^1.1.0",
+    "typescript": "^2.3.4"
+  }
+}
