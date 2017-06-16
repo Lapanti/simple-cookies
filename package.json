@@ -18,7 +18,10 @@
     ]
   },
   "lint-staged": {
-    "*.ts": ["prettier --single-quote --print-width 120 --tab-width 4 --trailing-comma all --write", "git add"]
+    "*.ts": [
+      "prettier --single-quote --print-width 120 --tab-width 4 --trailing-comma all --write",
+      "git add"
+    ]
   },
   "scripts": {
     "precommit": "lint-staged",
