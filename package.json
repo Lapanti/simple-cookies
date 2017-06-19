@@ -1,6 +1,6 @@
 {
   "name": "simple-cookies",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A very simple JS (or TS) library to handle cookies in the browser",
   "main": "index.js",
   "repository": "https://github.com/Lapanti/simple-cookies",
