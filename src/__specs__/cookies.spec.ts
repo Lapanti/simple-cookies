@@ -36,6 +36,7 @@ test('Cookies', () => {
  * @jest-environment node
  */
 test('Cookies in server', () => {
+    const document = undefined;
     describe('get', () => {
         it('should throw an error when document is not defined', () => {
             expect(() => cookies.get('doesntmatter')).toThrow(
