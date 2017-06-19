@@ -32,7 +32,7 @@
     "test": "yarn lint && jest",
     "test:watch": "jest --watch",
     "test:ci": "yarn lint && jest --runInBand --forceExit --coverage",
-    "build": "webpack && cp lib/src/cookies.d.ts lib/main.d.ts && rm -rf lib/src"
+    "build": "webpack -p && cp lib/src/cookies.d.ts lib/main.d.ts && rm -rf lib/src"
   },
   "devDependencies": {
     "@types/jest": "^19.2.4",
