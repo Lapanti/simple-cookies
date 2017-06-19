@@ -1,6 +1,6 @@
 {
   "name": "simple-cookies",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A very simple JS (or TS) library to handle cookies in the browser",
   "main": "lib/main.js",
   "types": "lib/main.d.ts",
