@@ -36,6 +36,8 @@ test('Cookies', () => {
  * @jest-environment node
  */
 test('Cookies in server', () => {
+    document = undefined;
+
     describe('get', () => {
         it('should throw an error when document is not defined', () => {
             expect(() => cookies.get('doesntmatter')).toThrow(
@@ -79,10 +81,15 @@ test('Cookies in server', () => {
     });
 
     describe('checkCookieSupport', () => {
-        expect(() => checkCookieSupport()).toThrow(
-            'Document is not defined! Are you trying to use this on the server?',
-        );
-        expect(checkCookieSupport()).toThrow(CookieError);
-        expect(checkCookieSupport({ silent: true })).toBeFalsy();
+        it('should throw error if not silent and document is undefined', () => {
+            expect(() => checkCookieSupport()).toThrow(
+                'Document is not defined! Are you trying to use this on the server?',
+            );
+            expect(checkCookieSupport()).toThrow(CookieError);
+        });
+
+        it('should return false if silent is enabled', () => {
+            expect(checkCookieSupport({ silent: true })).toBeFalsy();
+        });
     });
 });
