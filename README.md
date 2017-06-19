@@ -23,6 +23,7 @@ cookies.remove('example' /*, cookieOpts (see below) */); // Returns true if cook
 
 ## Options
 For each cookie-method you can pass an optional last argument that is an object with any of the following properties and values:
+
 | Name      | Values                   | Effect                                                                             |
 | --------- | ------------------------ | ---------------------------------------------------------------------------------- |
 | silent    | `true`|`false` (default) | Whether to throw an error (`false`) or not (`true`) when cookies are not supported | 

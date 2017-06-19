@@ -2,7 +2,7 @@ export class CookieError extends Error {}
 
 const daysToMillis = 24 * 60 * 60 * 1000; // tslint:disable-line:no-magic-numbers
 
-interface ICookieOptions {
+export interface ICookieOptions {
     readonly silent?: boolean;
     readonly days?: number;
 }

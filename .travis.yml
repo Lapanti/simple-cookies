@@ -5,3 +5,10 @@ cache: yarn
 script: yarn run test:ci
 after_script:
 - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+deploy:
+  provider: npm
+  api_key:
+    secure: JdzqLbRXLWu3zQqFE5W5EZ1lKMo1gxs0leMkwKLbhHvuFSzWKld44/ydtdK7zgE+2L0iSYjZCCAEqJPSE3/gt0B++ZMR/ILsA9lw63GHlC8EkVB6X2QrMPk5mYwi54V77v+5DhY/TfjICQXf/tcOGMJ0L3BYmHvuAmzluX7P9uJqKbGMxf9bTYSrVi8E5+dkzSj0fypIT+So65/uSNqZQoJBQAC8foG61AX6UoHzwANPbykAwuLzrjgHexTFZo+wWgdFT48kzjWv2BdXQ3s0rNKYVIHimN1meiLIXYFGq+tWmqzO00jtddIGxOl586RE/LXB7ak6+07jbDbs9fCUR5h95X2BflMCdfO1HGuZXAY+qAqpZD3xgUXyDnMkfPh31NMS42XPai9AR+ADlAL5fHryDz9DHk65K/WYV2VyKC7t95AHo8U/Jdyh7cbwqbi0+9h9NjYAWIVLWiHj5LfLSA6exxp8fXzXWrWen4vUudoccDH9IN+gJ8lbx66/ozGWRv4WCg5KFXk3FwvpYwFm98ijl27oc815ciGGXzX1VvyKnaDNft7WQxPOvoh2Y2U/RVFz1ieLbsgtlO9FcmBJceAvhWDW8k6WDW6Ev9lMr3O4o40qfZqZScmqV+Sh7kn3HY/w3PZaeQl0dTFfVt+/hS54bU0RZOcgN1hzjt758b8=
+  on:
+    tags: true
+    branch: master
