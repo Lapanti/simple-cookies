@@ -10,13 +10,13 @@
         ],
         "sourceMap": true,
         "pretty": true,
-        "declaration": true,
-        "outFile": "lib/main.js"
+        "declaration": true
     },
     "include": [
         "src/**/*.ts"
     ],
     "exclude": [
-        "**/*.spec.ts"
+        "**/*.spec.ts",
+        "webpack.config.ts"
     ]
 }
