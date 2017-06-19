@@ -5,6 +5,6 @@ See issue # / A short description
 A short description of the changes
 
 - [ ] I have considered (and possibly added) tests
-- [ ] I have updated the documentation (gitbook)
+- [ ] I have updated the documentation
 
 [Optional] Resolves #
