@@ -79,6 +79,9 @@ test('Cookies in server', () => {
     });
 
     describe('checkCookieSupport', () => {
+        expect(() => checkCookieSupport()).toThrow(
+            'Document is not defined! Are you trying to use this on the server?',
+        );
         expect(checkCookieSupport()).toThrow(CookieError);
         expect(checkCookieSupport({ silent: true })).toBeFalsy();
     });
