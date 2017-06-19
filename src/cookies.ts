@@ -13,7 +13,6 @@ const checkCookieSupport = (opts?: ICookieOptions): boolean => {
     }
     return typeof document !== 'undefined';
 };
-export const cookieSupport = process && process.env && process.env.NODE_ENV === 'test' ? checkCookieSupport : null;
 
 const write = (name: string, value: string, opts?: ICookieOptions): boolean => {
     if (checkCookieSupport(opts)) {
@@ -38,5 +37,7 @@ const cookies = {
     set: write,
     remove: (name: string, opts?: ICookieOptions): boolean => write(name, '', Object.assign({ days: -1 }, opts)),
 };
+
+export const priv = process && process.env && process.env.NODE_ENV === 'test' ? { checkCookieSupport } : null;
 
 export default cookies;

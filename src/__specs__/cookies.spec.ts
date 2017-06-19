@@ -1,4 +1,5 @@
-import cookies, { CookieError, cookieSupport } from '../cookies';
+import cookies, { CookieError, priv } from '../cookies';
+const { checkCookieSupport } = priv as any;
 
 test('Cookies', () => {
     describe('get', () => {
@@ -27,7 +28,7 @@ test('Cookies', () => {
     });
 
     describe('checkCookieSupport', () => {
-        expect(cookieSupport()).toBeTruthy();
+        expect(checkCookieSupport()).toBeTruthy();
     });
 });
 
@@ -78,7 +79,7 @@ test('Cookies in server', () => {
     });
 
     describe('checkCookieSupport', () => {
-        expect(cookieSupport()).toThrow(CookieError);
-        expect(cookieSupport({ silent: true })).toBeFalsy();
+        expect(checkCookieSupport()).toThrow(CookieError);
+        expect(checkCookieSupport({ silent: true })).toBeFalsy();
     });
 });
