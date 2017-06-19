@@ -13,6 +13,7 @@ const checkCookieSupport = (opts?: ICookieOptions): boolean => {
     }
     return typeof document !== 'undefined';
 };
+export const cookieSupport = process && process.env && process.env.NODE_ENV === 'test' ? checkCookieSupport : null;
 
 const write = (name: string, value: string, opts?: ICookieOptions): boolean => {
     if (checkCookieSupport(opts)) {

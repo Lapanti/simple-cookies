@@ -1,4 +1,4 @@
-import cookies, { CookieError } from '../cookies';
+import cookies, { CookieError, cookieSupport } from '../cookies';
 
 test('Cookies', () => {
     describe('get', () => {
@@ -24,6 +24,10 @@ test('Cookies', () => {
             expect(cookies.remove('test')).toBeTruthy();
             expect(cookies.get('test')).toEqual('');
         });
+    });
+
+    describe('checkCookieSupport', () => {
+        expect(cookieSupport()).toBeTruthy();
     });
 });
 
@@ -71,5 +75,10 @@ test('Cookies in server', () => {
             expect(() => cookies.remove('doesntmatter', { silent: true })).not.toThrow();
             expect(cookies.remove('doesntmatter', { silent: true })).toBeFalsy();
         });
+    });
+
+    describe('checkCookieSupport', () => {
+        expect(cookieSupport()).toThrow(CookieError);
+        expect(cookieSupport({ silent: true })).toBeFalsy();
     });
 });
