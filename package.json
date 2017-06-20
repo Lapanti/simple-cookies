@@ -19,11 +19,14 @@
     ]
   },
   "lint-staged": {
-    "src/**/*.ts": [
-      "prettier --single-quote --print-width 120 --tab-width 4 --trailing-comma all --write",
-      "webpack -p && mv lib/cookies.d.ts lib/main.d.ts",
-      "git add"
-    ]
+    "verbose": true,
+    "linters": {
+      "src/cookies.ts": [
+        "prettier --single-quote --print-width 120 --tab-width 4 --trailing-comma all --write",
+        "build",
+        "git add"
+      ]
+    }
   },
   "scripts": {
     "precommit": "lint-staged",

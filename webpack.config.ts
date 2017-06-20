@@ -3,7 +3,6 @@ import * as webpack from 'webpack';
 
 module.exports = {
     context: __dirname,
-    entry: path.resolve('src', 'cookies.ts'),
     output: {
         filename: 'main.js',
         path: path.resolve('lib'),
