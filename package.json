@@ -27,6 +27,7 @@
   },
   "scripts": {
     "precommit": "lint-staged",
+    "postprecommit": "mv lib/cookies.d.ts lib/main.d.ts && git add lib/main.d.ts",
     "prepush": "yarn test",
     "lint": "tslint --type-check --project tsconfig.json",
     "test": "yarn lint && jest",
