@@ -19,14 +19,14 @@
     ]
   },
   "lint-staged": {
-    "*.ts": [
+    "src/**/*.ts": [
       "prettier --single-quote --print-width 120 --tab-width 4 --trailing-comma all --write",
-      "webpack -p",
+      "webpack -p && mv lib/cookies.d.ts lib/main.d.ts",
       "git add"
     ]
   },
   "scripts": {
-    "precommit": "lint-staged && mv lib/cookies.d.ts lib/main.d.ts && git add lib/main.d.ts",
+    "precommit": "lint-staged",
     "prepush": "yarn test",
     "lint": "tslint --type-check --project tsconfig.json",
     "test": "yarn lint && jest",
