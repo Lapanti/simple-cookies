@@ -21,6 +21,7 @@
   "lint-staged": {
     "*.ts": [
       "prettier --single-quote --print-width 120 --tab-width 4 --trailing-comma all --write",
+      "webpack -p",
       "git add"
     ]
   },
