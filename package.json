@@ -22,11 +22,12 @@
     "*.ts": [
       "prettier --single-quote --print-width 120 --tab-width 4 --trailing-comma all --write",
       "webpack -p",
+      "renamer --find cookies --replace main --dry-run 'lib/**/*.d.ts'",
       "git add"
     ]
   },
   "scripts": {
-    "precommit": "lint-staged && mv lib/cookies.d.ts lib/main.d.ts && git add lib/main.d.ts",
+    "precommit": "lint-staged",
     "prepush": "yarn test",
     "lint": "tslint --type-check --project tsconfig.json",
     "test": "yarn lint && jest",
@@ -48,6 +49,7 @@
     "jest": "^20.0.4",
     "lint-staged": "^3.6.1",
     "prettier": "^1.4.4",
+    "renamer": "^0.6.1",
     "ts-jest": "^20.0.6",
     "ts-node": "^3.0.6",
     "tslint": "^5.4.3",
