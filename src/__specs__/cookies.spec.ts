@@ -14,8 +14,29 @@ test('Cookies', () => {
 
     describe('set', () => {
         it('should succeed in setting a new cookie', () => {
-            expect(cookies.set('test', 'value')).toBeTruthy();
-            expect(cookies.get('test')).toEqual('value');
+            const name = 'test';
+            const value = 'value';
+            expect(cookies.set(name, value)).toBeTruthy();
+            expect(cookies.get(name)).toEqual(value);
+            expect(document.cookie).toEqual(`${name}=${value}`);
+        });
+
+        it('should set correct expires value', () => {
+            const name = 'test';
+            const value = 'value';
+            const days = 20;
+            expect(cookies.set(name, value, { days })).toBeTruthy();
+            expect(cookies.get(name)).toEqual(value);
+            expect(document.cookie).toEqual(expect.stringMatching(`${name}=${value}; expires=\d*$`));
+        });
+
+        it('should set the correct secure value', () => {
+            const name = 'test';
+            const value = 'value';
+            const secure = true;
+            expect(cookies.set(name, value, { secure })).toBeTruthy();
+            expect(cookies.get(name)).toEqual(value);
+            expect(document.cookie).toEqual(expect.stringMatching(`${name}=${value}; secure`));
         });
     });
 
@@ -24,6 +45,7 @@ test('Cookies', () => {
             document.cookie = 'test=value';
             expect(cookies.remove('test')).toBeTruthy();
             expect(cookies.get('test')).toEqual('');
+            expect(document.cookie).toEqual('');
         });
     });
 
