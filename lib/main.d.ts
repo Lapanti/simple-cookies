@@ -1,4 +1,5 @@
-export declare class CookieError extends Error {}
+export declare class CookieError extends Error {
+}
 export interface ICookieOptions {
     readonly silent?: boolean;
     readonly days?: number;
