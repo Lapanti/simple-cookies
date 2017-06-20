@@ -5,6 +5,7 @@ const daysToMillis = 24 * 60 * 60 * 1000; // tslint:disable-line:no-magic-number
 export interface ICookieOptions {
     readonly silent?: boolean;
     readonly days?: number;
+    readonly secure?: boolean;
 }
 
 const checkCookieSupport = (opts?: ICookieOptions): boolean => {
@@ -20,7 +21,8 @@ const write = (name: string, value: string, opts?: ICookieOptions): boolean => {
         const expires = !!opts && !!opts.days
             ? `; expires=${date.setTime(date.getTime() + opts.days * daysToMillis)}`
             : '';
-        document.cookie = `${encodeURIComponent(name)}=${value}${expires}`;
+        const secure = !!opts && opts.secure ? '; secure' : '';
+        document.cookie = `${encodeURIComponent(name)}=${value}${expires}${secure}`;
         return true;
     }
     return false;

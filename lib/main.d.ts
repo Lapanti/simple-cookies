@@ -3,6 +3,7 @@ export declare class CookieError extends Error {
 export interface ICookieOptions {
     readonly silent?: boolean;
     readonly days?: number;
+    readonly secure?: boolean;
 }
 declare const cookies: {
     get: (name: string, opts?: ICookieOptions | undefined) => string | null;
