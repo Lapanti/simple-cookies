@@ -4,6 +4,7 @@ export interface ICookieOptions {
     readonly silent?: boolean;
     readonly days?: number;
     readonly secure?: boolean;
+    readonly path?: string;
 }
 declare const cookies: {
     get: (name: string, opts?: ICookieOptions | undefined) => string | null;

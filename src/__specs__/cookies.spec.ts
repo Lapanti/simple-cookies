@@ -38,6 +38,15 @@ test('Cookies', () => {
             expect(cookies.get(name)).toEqual(value);
             expect(document.cookie).toEqual(expect.stringMatching(`${name}=${value}; secure`));
         });
+
+        it('should set the correct path value', () => {
+            const name = 'test';
+            const value = 'value';
+            const path = '/test';
+            expect(cookies.set(name, value, { path })).toBeTruthy();
+            expect(cookies.get(name)).toEqual(value);
+            expect(document.cookie).toEqual(expect.stringMatching(`${name}=${value}; path=${path}`));
+        });
     });
 
     describe('remove', () => {
