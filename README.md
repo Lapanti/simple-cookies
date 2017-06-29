@@ -30,6 +30,7 @@ For each cookie-method you can pass an optional last argument that is an object 
 | days      | a number                   | How long the cookies should be valid (in days) *optional*                          |
 | secure    | `true` | `false` (default) | Whether the cookie should only be transmitted over secure protocols such as https  |
 | path      | a string                   | Indicates the URL in which the cookie is used                                      |
+| domain    | a string                   | The host(s) to whom the cookie will be sent to                                     |
 
 ## License
 All of the code is licensed under the [MIT license](LICENSE)
