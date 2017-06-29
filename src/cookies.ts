@@ -7,6 +7,7 @@ export interface ICookieOptions {
     readonly days?: number;
     readonly secure?: boolean;
     readonly path?: string;
+    readonly domain?: string;
 }
 
 const checkCookieSupport = (opts?: ICookieOptions): boolean => {
@@ -19,12 +20,12 @@ const checkCookieSupport = (opts?: ICookieOptions): boolean => {
 const write = (name: string, value: string, opts?: ICookieOptions): boolean => {
     if (checkCookieSupport(opts)) {
         const date = new Date();
-        const expires = !!opts && !!opts.days
-            ? `; expires=${date.setTime(date.getTime() + opts.days * daysToMillis)}`
-            : '';
+        const expires =
+            !!opts && !!opts.days ? `; expires=${date.setTime(date.getTime() + opts.days * daysToMillis)}` : '';
         const secure = !!opts && opts.secure ? '; secure' : '';
         const path = !!opts && opts.path ? `; path=${opts.path}` : '';
-        document.cookie = `${encodeURIComponent(name)}=${value}${expires}${secure}${path}`;
+        const domain = !!opts && opts.domain ? `; domain=${opts.domain}` : '';
+        document.cookie = `${encodeURIComponent(name)}=${value}${expires}${secure}${path}${domain}`;
         return true;
     }
     return false;

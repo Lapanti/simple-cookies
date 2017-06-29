@@ -47,6 +47,15 @@ test('Cookies', () => {
             expect(cookies.get(name)).toEqual(value);
             expect(document.cookie).toEqual(expect.stringMatching(`${name}=${value}; path=${path}`));
         });
+
+        it('should set the correct domain value', () => {
+            const name = 'test';
+            const value = 'value';
+            const domain = 'http://google.fi';
+            expect(cookies.set(name, value, { domain })).toBeTruthy();
+            expect(cookies.get(name)).toEqual(value);
+            expect(document.cookie).toEqual(expect.stringMatching(`${name}=${value}; domain=${domain}`));
+        });
     });
 
     describe('remove', () => {
