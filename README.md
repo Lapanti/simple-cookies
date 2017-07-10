@@ -1,4 +1,6 @@
 # A very simple utility library for handling cookies in client code (JS or TS)
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/Lapanti/simple-cookies.svg)](https://greenkeeper.io/)
 [![Build Status](https://img.shields.io/travis/Lapanti/simple-cookies/master.svg?style=flat-square)](https://travis-ci.org/Lapanti/simple-cookies) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT) [![DevDependency Status](https://img.shields.io/david/dev/lapanti/simple-cookies.svg?style=flat-square)](https://david-dm.org/lapanti/simple-cookies?type=dev) [![Coverage Status](https://img.shields.io/coveralls/Lapanti/simple-cookies/master.svg?style=flat-square)](https://coveralls.io/github/Lapanti/simple-cookies?branch=master) [![npm](https://img.shields.io/npm/dt/simple-cookies.svg?style=flat-square)](https://www.npmjs.com/package/simple-cookies) [![npm](https://img.shields.io/npm/v/simple-cookies.svg?style=flat-square)](https://www.npmjs.com/package/simple-cookies)
 
 ## Install
