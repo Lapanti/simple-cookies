@@ -39,7 +39,7 @@
     "postbuild": "mv lib/cookies.d.ts lib/main.d.ts"
   },
   "devDependencies": {
-    "@types/jest": "^20.0.2",
+    "@types/jest": "^21.1.0",
     "@types/node": "^8.0.5",
     "@types/webpack": "^3.0.1",
     "awesome-typescript-loader": "^3.2.1",
