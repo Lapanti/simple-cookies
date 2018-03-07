@@ -42,7 +42,7 @@
     "@types/jest": "^22.0.0",
     "@types/node": "^9.3.0",
     "@types/webpack": "^3.0.1",
-    "awesome-typescript-loader": "^3.2.1",
+    "awesome-typescript-loader": "^4.0.0",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.5.2",
